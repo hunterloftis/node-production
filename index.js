@@ -18,7 +18,9 @@ var store = new RedisStore({
 
 var session = expressSession({
   secret: SECRET,
-  store: store
+  store: store,
+  resave: true,
+  saveUninitialized: true
 });
 
 var db = mongoose.createConnection(MONGO_URL);
