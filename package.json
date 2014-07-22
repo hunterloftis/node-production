@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "DEBUG=Node-Production:* node index.js"
+    "start": "DEBUG=Node-Production:* node index.js",
+    "dev": "DEBUG=Node-Production:* node-dev index.js"
   },
   "author": "",
   "license": "ISC",
@@ -15,5 +16,8 @@
     "express": "^4.6.1",
     "express-session": "^1.6.5",
     "mongoose": "^3.8.13"
+  },
+  "devDependencies": {
+    "node-dev": "^2.3.0"
   }
 }
