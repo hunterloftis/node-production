@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "DEBUG=Node-Production:* node index.js",
+    "start": "node index.js",
     "dev": "DEBUG=Node-Production:* node-dev index.js"
   },
   "author": "",
