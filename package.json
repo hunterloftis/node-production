@@ -1,13 +1,13 @@
 {
   "name": "node-production",
   "version": "0.0.0",
-  "description": "",
+  "description": "A minimum viable node app for production deployment",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
     "dev": "DEBUG=Node-Production:* node-dev index.js"
   },
-  "author": "",
+  "author": "Hunter Loftis <hunter@heroku.com>",
   "license": "ISC",
   "dependencies": {
     "connect-redis": "^2.0.0",
@@ -19,5 +19,8 @@
   },
   "devDependencies": {
     "node-dev": "^2.3.0"
+  },
+  "engines": {
+    "node": "0.10.x"
   }
 }
