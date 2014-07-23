@@ -14,5 +14,5 @@ production:
 staging:
 	heroku config:set NODE_ENV=staging
 
-soup-nuts: provision deploy
+app: provision deploy
 
