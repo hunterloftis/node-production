@@ -2,6 +2,7 @@
 
 A production-ready node app that can be provisioned and deployed
 for free on Heroku with a single command (`make app`).
+It will scale without issue and handle network interruptions gracefully.
 
 ```
 git clone https://github.com/hunterloftis/node-production.git
