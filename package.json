@@ -10,12 +10,19 @@
   "author": "Hunter Loftis <hunter@heroku.com>",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^0.7.8",
+    "body-parser": "^1.5.0",
+    "connect-flash": "^0.1.1",
     "connect-redis": "^2.0.0",
+    "cookie-parser": "^1.3.2",
     "debug": "^1.0.4",
     "ejs": "^1.0.0",
     "express": "^4.6.1",
     "express-session": "^1.6.5",
-    "mongoose": "^3.8.13"
+    "jade": "^1.5.0",
+    "mongoose": "^3.8.13",
+    "morgan": "^1.2.0",
+    "static-favicon": "^2.0.0-alpha"
   },
   "devDependencies": {
     "node-dev": "^2.3.0"

@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  h1 Sign in
+
+  form(action='/signin' method='post')
+    input(name='username')
+    input(name='password')
+    button(type='submit') Sign in
+  p Need an account?&nbsp;
+    a(href='/') Sign up!
