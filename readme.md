@@ -24,6 +24,8 @@ make app
 - Bcrypt + salting
 - Sane gitignore
 
+TODO:
+
 - Automated test suite (`npm test`)
 - Continuous integration
 - Cluster
