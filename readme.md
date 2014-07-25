@@ -5,8 +5,7 @@ for free on Heroku with a single command (`make app`).
 It will scale without issue and handle network interruptions gracefully.
 
 ```
-git clone https://github.com/hunterloftis/node-production.git
-cd node-production
+git clone https://github.com/hunterloftis/node-production.git && cd node-production
 make app
 ```
 
