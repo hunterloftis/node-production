@@ -11,10 +11,12 @@ deploy:
 production:
 	heroku config:set NODE_ENV=production
 	heroku config:set QUIET=true
+	heroku config:unset DEBUG
 
 staging:
 	heroku config:set NODE_ENV=staging
 	heroku config:unset QUIET
+	heroku config:set DEBUG='Node-Production:*'
 
 app: provision deploy
 
