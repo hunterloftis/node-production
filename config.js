@@ -4,5 +4,6 @@ module.exports = {
   session_secret: process.env.SESSION_SECRET || 'mySessionSecret',
   cookie_secret: process.env.COOKIE_SECRET || 'myCookieSecret',
   show_errors: process.env.NODE_ENV !== 'production',
-  port: process.env.PORT || 5000
+  port: process.env.PORT || 5000,
+  quiet: process.env.QUIET || false
 };
