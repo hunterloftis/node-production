@@ -4,7 +4,7 @@
   "description": "A minimum viable node app for production deployment",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js > /dev/null",
+    "start": "node index.js",
     "dev": "DEBUG=Node-Production:* node-dev index.js"
   },
   "author": "Hunter Loftis <hunter@heroku.com>",
