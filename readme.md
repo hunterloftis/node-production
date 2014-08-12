@@ -24,9 +24,13 @@ make app
 - Bcrypt + salting
 - Sane gitignore
 
-TODO:
+## Local dependencies
 
-- Automated test suite (`npm test`)
-- Continuous integration
-- Cluster
+This app requires a mongodb and redis connection.
+To run locally, you can provide remote connections in the environment (see config.js).
+Alternatively, you can run mongodb and redis locally, eg:
 
+```
+$ brew services start mongodb
+$ brew services start redis
+```

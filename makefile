@@ -18,5 +18,5 @@ staging:
 	heroku config:unset QUIET
 	heroku config:set DEBUG='Node-Production:*'
 
-app: provision deploy
+app: provision production deploy
 
