@@ -6,10 +6,17 @@ create() {
   heroku create
   heroku addons:add mongohq
   heroku addons:add rediscloud
+
+  # can optionally use a specific key for the session secret here to be able to recover sessions
   heroku config:set SESSION_SECRET="`openssl rand -base64 32`"
 
+  # to disable view caching & other env-sensitive settings: heroku config:set NODE_ENV=staging
   heroku config:set NODE_ENV=production
+
+  # to get request/response logging: heroku config:unset QUIET
   heroku config:set QUIET=true
+
+  # to get debug logs: heroku config:set DEBUG='Node-Production:*'
   heroku config:unset DEBUG
 
   git push heroku master

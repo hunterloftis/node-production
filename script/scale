@@ -1,0 +1,11 @@
+#!/bin/bash
+set -euo pipefail
+IFS=$'\n\t'
+
+scale() {
+  heroku addons:upgrade rediscloud:100 &2> /dev/null
+  heroku config:set CONCURRENT=true
+  heroku ps:scale web=3:2X
+}
+
+scale
