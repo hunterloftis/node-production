@@ -18,5 +18,14 @@ staging:
 	heroku config:unset QUIET
 	heroku config:set DEBUG='Node-Production:*'
 
+benchmark-get:
+	mkdir -p test/benchmarks; \
+	ab -n 5000 -c 100 $(URL) > test/benchmarks/get.txt
+
+benchmark:
+	mkdir -p test/benchmarks; \
+	export URL=`heroku apps:info | grep "Web URL:" | awk '{ print $(NF) }'`; \
+	ab -n 5000 -c 100 -p test/fixtures/dummy.json -T 'application/json' $(URL)signout > test/benchmarks/20k-post.txt
+
 app: provision production deploy
 
