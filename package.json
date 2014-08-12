@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node index.js",
     "dev": "DEBUG=Node-Production:* node-dev index.js",
-    "debug": "DEBUG=Node-Production:* node index.js"
+    "create": "script/create",
+    "benchmark": "script/benchmark"
   },
   "author": "Hunter Loftis <hunter@heroku.com>",
   "license": "ISC",

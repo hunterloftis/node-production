@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+benchmark() {
+  local url="`heroku apps:info | grep "Web URL:" | awk '{ print $(NF) }'`"
+  mkdir -p test/benchmarks
+  ab -n 1000 -c 100 $url
+  ab -n 5000 -c 100 $url > test/benchmarks/get.txt
+  ab -n 5000 -c 100 -p test/fixtures/dummy.json -T 'application/json' ${url}signout > test/benchmarks/post.txt
+}
+
+benchmark
