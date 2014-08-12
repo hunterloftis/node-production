@@ -7,6 +7,8 @@ var server;
 if (!module.parent) {
   server = http.createServer(app);
 
+  console.log('type of stdout:', process.stdout._type);
+
   server.listen(config.port, function() {
     debug('listening on *:' + server.address().port);
   });
