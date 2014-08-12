@@ -2,15 +2,18 @@
 set -euo pipefail
 IFS=$'\n\t'
 
-heroku create
-heroku addons:add mongohq
-heroku addons:add rediscloud
-heroku config:set SESSION_SECRET="`openssl rand -base64 32`"
+create() {
+  heroku create
+  heroku addons:add mongohq
+  heroku addons:add rediscloud
+  heroku config:set SESSION_SECRET="`openssl rand -base64 32`"
 
-heroku config:set NODE_ENV=production
-heroku config:set QUIET=true
-heroku config:unset DEBUG
+  heroku config:set NODE_ENV=production
+  heroku config:set QUIET=true
+  heroku config:unset DEBUG
 
-git push heroku master
-heroku open
+  git push heroku master
+  heroku open
+}
 
+create
