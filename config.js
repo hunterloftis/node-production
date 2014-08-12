@@ -5,5 +5,6 @@ module.exports = {
   cookie_secret: process.env.COOKIE_SECRET || 'myCookieSecret',
   show_errors: process.env.NODE_ENV !== 'production',
   port: process.env.PORT || 5000,
-  quiet: process.env.QUIET || false
+  quiet: process.env.QUIET || false,
+  concurrent: process.env.CONCURRENT || false
 };

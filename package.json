@@ -7,7 +7,9 @@
     "start": "node index.js",
     "dev": "DEBUG=Node-Production:* node-dev index.js",
     "create": "script/create",
-    "benchmark": "script/benchmark"
+    "benchmark": "script/benchmark",
+    "debug": "heroku config:set DEBUG='Node-Production:*' && heroku config:unset QUIET",
+    "quiet": "heroku config:unset DEBUG && heroku config:set QUIET=true"
   },
   "author": "Hunter Loftis <hunter@heroku.com>",
   "license": "ISC",

@@ -1,8 +1,8 @@
 var cluster = require('cluster');
-var cpus = require('os').cpus().length;
+var os = require('os');
 var http = require('http');
 var config = require('./config');
-var app = require('./lib/app')(config);
+var app = require('./lib/app');
 var debug = require('./lib/debug')('index');
 
 if (!module.parent) {
@@ -11,14 +11,16 @@ if (!module.parent) {
 }
 
 function master() {
-  cluster.on('exit', revive);
+  var workers = config.concurrent ? os.cpus().length : 1;
+  var i;
 
-  for(var i = 0; i < cpus; i++) {
-    create(i, cpus);
+  cluster.on('exit', revive);
+  for (i = 0; i < workers; i++) {
+    create(i, workers);
   }
 
   function create(i, total) {
-    debug('Forking worker %d / %d ...', i, total);
+    debug('Forking worker %d / %d ...', i + 1, total);
     cluster.fork();
   }
 
@@ -29,7 +31,7 @@ function master() {
 }
 
 function worker() {
-  var server = http.createServer(app);
+  var server = http.createServer(app(config));
 
   server.listen(config.port, function() {
     debug('listening on *:' + server.address().port);
