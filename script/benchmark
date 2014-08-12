@@ -6,6 +6,7 @@ benchmark() {
   ab -n 1000 -c 100 $url
   ab -n 5000 -c 100 $url > test/benchmarks/get.txt
   ab -n 5000 -c 100 -p test/fixtures/dummy.json -T 'application/json' ${url}signout > test/benchmarks/post.txt
+  echo "benchmark results saved to test/benchmarks."
 }
 
 benchmark
