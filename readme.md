@@ -1,12 +1,12 @@
 # Node-Production
 
 A production-ready node app that can be provisioned and deployed
-for free on Heroku with a single command (`make app`).
+for free on Heroku with a single command (`npm run create`).
 It will scale without issue and handle network interruptions gracefully.
 
 ```
 git clone https://github.com/hunterloftis/node-production.git && cd node-production
-make app
+npm run create
 ```
 
 ## Checklist
@@ -33,4 +33,6 @@ Alternatively, you can run mongodb and redis locally, eg:
 ```
 $ brew services start mongodb
 $ brew services start redis
+$ npm install
+$ npm run dev
 ```
