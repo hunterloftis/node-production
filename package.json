@@ -24,6 +24,7 @@
     "express": "^4.6.1",
     "express-session": "^1.6.5",
     "jade": "^1.5.0",
+    "logfmt": "^1.1.2",
     "mongoose": "^3.8.13",
     "morgan": "^1.2.0",
     "serve-favicon": "~2.0.1",

@@ -1,9 +1,12 @@
 var cluster = require('cluster');
 var os = require('os');
 var http = require('http');
+var logfmt = require('logfmt');
+var log = logfmt.log.bind(logfmt);
+
 var config = require('./config');
 var app = require('./lib/app');
-var debug = require('./lib/debug')('index');
+var web = require('./lib/web');
 
 if (!module.parent) {
   if (cluster.isMaster) master();
@@ -11,30 +14,32 @@ if (!module.parent) {
 }
 
 function master() {
-  var workers = config.concurrent ? os.cpus().length : 1;
-  var i;
+  var workerCount = config.concurrent ? os.cpus().length : 1;
 
   cluster.on('exit', revive);
-  for (i = 0; i < workers; i++) {
-    create(i, workers);
+  for (var i = 0; i < workerCount; i++) {
+    create(i, workerCount);
   }
 
-  function create(i, total) {
-    debug('Forking worker %d / %d ...', i + 1, total);
+  function create(count, total) {
+    log({ type: 'info', msg: 'forking', worker: count + 1, workers: total });
     cluster.fork();
   }
 
   function revive(worker, code, signal) {
-    console.error('Worker %d died (%s), restarting...', worker.process.pid, signal || code)
+    log({ type: 'error', msg: 'worker died', pid: worker.process.pid, signal: signal || code });
+    log({ type: 'info', msg: 'restarting', pid: worker.process.pid });
     cluster.fork();
   }
 }
 
 function worker() {
-  var server = http.createServer(app(config));
+  var instance = web(app(config), config);
+  var server = http.createServer(instance);
+  server.listen(config.port, onListen);
 
-  server.listen(config.port, function() {
-    debug('listening on *:' + server.address().port);
-  });
+  function onListen() {
+    log({ type: 'info', msg: 'listening', port: server.address().port });
+  }
 }
 

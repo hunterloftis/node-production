@@ -6,5 +6,6 @@ module.exports = {
   show_errors: process.env.NODE_ENV !== 'production',
   port: process.env.PORT || 5000,
   quiet: process.env.QUIET || false,
-  concurrent: process.env.CONCURRENT || false
+  concurrent: process.env.CONCURRENT || false,
+  timeout: process.env.TIMEOUT || '5s'
 };
