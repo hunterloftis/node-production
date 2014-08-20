@@ -1,2 +1,2 @@
 web: node lib/server.js
-worker: node lib/background.js
+worker: node lib/runner.js
