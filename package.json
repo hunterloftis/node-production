@@ -4,11 +4,7 @@
   "description": "A minimum viable node app for production deployment",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "dev": "DEBUG=Node-Production:* node-dev index.js",
-    "create": "script/create",
-    "benchmark": "script/benchmark",
-    "scale": "script/scale"
+    "start": "nf start"
   },
   "author": "Hunter Loftis <hunter@heroku.com>",
   "license": "ISC",
@@ -23,6 +19,7 @@
     "ejs": "^1.0.0",
     "express": "^4.6.1",
     "express-session": "^1.6.5",
+    "foreman": "^0.4.2",
     "jade": "^1.5.0",
     "logfmt": "^1.1.2",
     "mongoose": "^3.8.13",
