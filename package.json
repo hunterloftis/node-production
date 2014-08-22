@@ -9,19 +9,13 @@
   "author": "Hunter Loftis <hunter@heroku.com>",
   "license": "ISC",
   "dependencies": {
-    "amqplib": "^0.2.1",
-    "bcrypt": "^0.7.8",
     "body-parser": "^1.5.0",
-    "clutch": "^0.1.1",
-    "connect-flash": "^0.1.1",
     "connect-redis": "^2.0.0",
     "connect-timeout": "^1.2.2",
     "cookie-parser": "^1.3.2",
-    "debug": "^1.0.4",
     "express": "^4.6.1",
     "express-session": "^1.6.5",
     "foreman": "^0.4.2",
-    "gs-clutch": "^0.1.1",
     "jade": "^1.5.0",
     "lodash": "^2.4.1",
     "logfmt": "^1.1.2",
@@ -33,8 +27,6 @@
     "toobusy-middleware": "^0.1.3"
   },
   "devDependencies": {
-    "memwatch": "^0.2.2",
-    "node-dev": "^2.3.0"
   },
   "engines": {
     "node": "0.10.x"

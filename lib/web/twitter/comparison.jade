@@ -5,13 +5,21 @@ html(lang='en')
 
   body
     form
-      input(placeholder='First Twitter username')
-      input(placeholder='Second Twitter username')
-      a#compare-btn Compare
+      input#compare-user1(placeholder='First Twitter username')
+      input#compare-user2(placeholder='Second Twitter username')
+      a#compare-btn(href='#') Compare
 
   script(src='//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js')
-  script
+  script.
 
     $('#compare-btn').on('click', function() {
-
+      $.post('/compare', {
+        user1: $('#compare-user2').val(),
+        user2: $('#compare-user2').val()
+      }, onResult);
+      return false;
     });
+
+    function onResult(data) {
+      console.log('result:', data);
+    }
