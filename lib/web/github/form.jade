@@ -1,0 +1,23 @@
+doctype html
+html(lang='en')
+  head
+    title Github Repository Analysis
+
+  body
+    lyze
+      input#repo(placeholder='username/repository')
+      a#analyze-btn(href='#') Analyze
+
+  script(src='//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js')
+  script.
+
+    $('#analyze-btn').on('click', function() {
+      $.post('/analysis', {
+        repo: $('#repo').val()
+      }, onResult);
+      return false;
+    });
+
+    function onResult(data) {
+      console.log('result:', data);
+    }
