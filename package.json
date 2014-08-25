@@ -30,6 +30,7 @@
     "rabbit.js": "^0.4.1",
     "sentiment": "^1.0.1",
     "serve-favicon": "~2.0.1",
+    "summarize": "^1.5.0",
     "superagent": "^0.18.2",
     "toobusy-middleware": "^0.1.3"
   },
