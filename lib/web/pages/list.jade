@@ -1,0 +1,28 @@
+doctype html
+html(lang='en')
+  head
+    title Heroku Articles
+    link(rel='stylesheet' type='text/css' href='/pages.css')
+
+  body.Global
+    .L-wrap
+
+      header.TopHeader Heroku Articles
+
+      form.PageForm.L-push
+        input(placeholder='www.url.com' data-bind='textInput: url')
+        a(data-bind='click: addPage') Add
+
+      .PageList.L-hidden(data-bind='foreach: pages, css: { "L-hidden": false }')
+        a(href='page.url').PageList-page
+          header.PageList-title(data-bind='text: title')
+          img.PageList-thumb(data-bind='attr: { src: image }')
+          p.PageList-topics(data-bind='text: topicList')
+          p.PageList-prediction
+            span(data-bind='text: minutes + "-minute read"')
+            span(data-bind='text: style')
+            span(data-bind='text: "generally " + sentiment')
+
+    script(src='//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js')
+    script(src='//cdnjs.cloudflare.com/ajax/libs/knockout/3.2.0/knockout-min.js')
+    script(src='/pages.js')

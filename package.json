@@ -9,6 +9,7 @@
   "author": "Hunter Loftis <hunter@heroku.com>",
   "license": "ISC",
   "dependencies": {
+    "Sentimental": "^1.0.1",
     "body-parser": "^1.5.0",
     "connect-redis": "^2.0.0",
     "connect-timeout": "^1.2.2",
@@ -16,18 +17,24 @@
     "express": "^4.6.1",
     "express-session": "^1.6.5",
     "foreman": "^0.4.2",
+    "github": "^0.2.1",
     "jade": "^1.5.0",
     "lodash": "^2.4.1",
     "logfmt": "^1.1.2",
     "mongoose": "^3.8.13",
+    "mongoose-timestamp": "^0.3.0",
     "morgan": "^1.2.0",
     "node-uuid": "^1.4.1",
+    "octonode": "^0.6.4",
+    "promise": "^5.0.0",
     "rabbit.js": "^0.4.1",
+    "sentiment": "^1.0.1",
     "serve-favicon": "~2.0.1",
+    "summarize": "^1.5.0",
+    "superagent": "^0.18.2",
     "toobusy-middleware": "^0.1.3"
   },
-  "devDependencies": {
-  },
+  "devDependencies": {},
   "engines": {
     "node": "0.10.x"
   }
