@@ -12,7 +12,7 @@ html(lang='en')
   script.
 
     $('#analyze-btn').on('click', function() {
-      $.post('/analysis', {
+      $.post('/page', {
         repo: $('#repo').val()
       }, onResult);
       return false;
