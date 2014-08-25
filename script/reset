@@ -1,0 +1,19 @@
+#!/usr/bin/env node
+
+var config = require('../lib/config');
+var app = require('../lib/app');
+var instance = app(config);
+
+instance
+  .reset()
+  .then(onSuccess, onError);
+
+function onSuccess() {
+  console.log('successfully reset');
+  instance.shutdown();
+}
+
+function onError(err) {
+  instance.shutdown();
+  throw err;
+}
