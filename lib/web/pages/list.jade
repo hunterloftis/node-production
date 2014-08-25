@@ -1,19 +1,19 @@
 doctype html
 html(lang='en')
   head
-    title Github Repository Analysis
+    title Articles
 
   body
     lyze
-      input#repo(placeholder='username/repository')
-      a#analyze-btn(href='#') Analyze
+      input#url(placeholder='url')
+      a#add-btn(href='#') Add
 
   script(src='//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js')
   script.
 
-    $('#analyze-btn').on('click', function() {
+    $('#add-btn').on('click', function() {
       $.post('/page', {
-        repo: $('#repo').val()
+        url: $('#url').val()
       }, onResult);
       return false;
     });
