@@ -16,7 +16,7 @@ html(lang='en')
       .PagePending(data-bind='visible: isPending') Pending upload
 
       .PageList.L-hidden(data-bind='foreach: pages, css: { "L-hidden": false }')
-        a(data-bind='attr: { href: url }' target='_blank').PageList-page
+        a.PageList-page(data-bind='attr: { href: url }' target='_blank')
           header.PageList-title(data-bind='text: title')
           img.PageList-thumb(data-bind='attr: { src: image }')
           p.PageList-topics(data-bind='text: topicList')
