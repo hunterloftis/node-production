@@ -9,13 +9,11 @@ create() {
   heroku addons:add rediscloud
   heroku addons:add cloudamqp
 
-  heroku config:set SESSION_SECRET="`openssl rand -base64 32`"
   heroku config:set NODE_ENV="production"
   heroku config:set VIEW_CACHE="true"
   heroku config:set THRIFTY="true"
 
   git push heroku master
-  heroku ps
 }
 
 create

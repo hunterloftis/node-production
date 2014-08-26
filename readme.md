@@ -28,6 +28,9 @@ $ npm install
 
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/hunterloftis/node-production)
 
+If you would rather clone locally and then deploy from the CLI,
+you can do so via `script/create`
+
 ## Config
 
 Environment variables are mapped to a config object in lib/config.js.
