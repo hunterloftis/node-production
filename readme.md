@@ -82,3 +82,26 @@ heroku config:unset THRIFTY
 heroku ps:scale web=1 worker=1
 ```
 
+## Architecture
+
+Writing maintainable Node apps is all about separating concerns into small, well-defined modules.
+This barebones app has three distinct components with their own responsibilities:
+
+#### App
+
+The business logic is all in lib/app.
+This module orchestrates and provides a facade for the underlying
+MongoDB database and the RabbitMQ job queue.
+
+#### Web
+
+The user-facing portion of the project lies in lib/web.
+This module is responsible for providing an http interface and routing requests.
+It *shows* things and relies on an App instance to *do* things.
+
+#### Worker
+
+The background processes run through lib/worker.
+This module is tiny - it just instantiates an App instance to process the job queue.
+
+
