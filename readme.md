@@ -2,6 +2,8 @@
 
 Running Node all the way from development to production on Heroku.
 
+[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/hunterloftis/node-production)
+
 ## Local dependencies
 
 - Redis for sessions
@@ -24,10 +26,7 @@ $ npm install
 
 ## Deploying
 
-```
-$ script/create
-$ heroku open
-```
+[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/hunterloftis/node-production)
 
 ## Config
 
@@ -38,3 +37,24 @@ This provides reasonable defaults as well as a layer of generalization
 ## Scaling
 
 The app is separated into two tiers: web (server.js) and worker (worker.js).
+This enables horizontally scaling for both web traffic and long-running requests.
+
+### Locally
+
+`npm start` runs node-foreman, which will start a single web process and a single worker process.
+
+### On Heroku
+
+The default deploy configuration includes `THRIFTY=true`, which starts the app in single-dyno mode (free!).
+With `THRIFTY=true`, the web process handles both http requests and queued jobs.
+
+Of course, a production app should never run in a single instance,
+and you should avoid tying up serving your users with long-running processes.
+When you're ready to test in staging or deploy to production, you can
+scale beyond single-dyno mode:
+
+```
+heroku config:unset THRIFTY
+heroku ps:scale web=1 worker=1
+```
+
