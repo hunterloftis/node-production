@@ -6,9 +6,9 @@ Running Node all the way from development to production on Heroku.
 
 ## Local dependencies
 
-- Redis for sessions
-- MongoDB for data
-- RabbitMQ for job queueing
+- [Redis](http://redis.io/) for sessions
+- [MongoDB](http://www.mongodb.org/) for data
+- [RabbitMQ](http://www.rabbitmq.com/) for job queueing
 
 ## Installing
 
@@ -50,16 +50,19 @@ Environment variables are mapped to a config object in lib/config.js.
 This provides reasonable defaults as well as a layer of generalization
 (`process.env.REDISCLOUD_URL` => `config.redis_url`).
 
+You can override the local defaults by
+[adding variables to a .env file](https://github.com/strongloop/node-foreman#environmental-variables).
+
 ## Scaling
 
 The app is separated into two tiers: web (server.js) and worker (worker.js).
 This enables horizontally scaling for both web traffic and long-running requests.
 
-### Locally
+#### Locally
 
-`npm start` runs node-foreman, which will start a single web process and a single worker process.
+`npm start` runs [node-foreman](http://strongloop.github.io/node-foreman/), which will start a single web process and a single worker process.
 
-### On Heroku
+#### On Heroku
 
 The default deploy configuration includes `THRIFTY=true`, which starts the app in single-dyno mode (free!).
 With `THRIFTY=true`, the web process handles both http requests and queued jobs.
