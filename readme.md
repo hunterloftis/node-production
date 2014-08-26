@@ -56,7 +56,9 @@ You can override the local defaults by
 
 ## Scaling
 
-The app is separated into two tiers: web (server.js) and worker (worker.js).
+The app is separated into two tiers:
+web ([server.js](https://github.com/hunterloftis/node-production/blob/master/lib/server.js))
+and worker ([worker.js](https://github.com/hunterloftis/node-production/blob/master/lib/worker.js)).
 This enables horizontally scaling for both web traffic and long-running requests.
 
 #### Locally
