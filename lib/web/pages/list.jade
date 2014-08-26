@@ -5,17 +5,18 @@ html(lang='en')
     link(rel='stylesheet' type='text/css' href='/pages.css')
 
   body.Global
-    .L-wrap
+    .L-wrap.L-hidden(data-bind='css: { "L-hidden": false }')
 
       header.TopHeader Heroku Articles
 
-      form.PageForm.L-push
+      form.PageForm.L-push(data-bind='submit: addPage')
         input(placeholder='www.url.com' data-bind='textInput: url')
         a(data-bind='click: addPage') Add
+        p.PageForm-error(data-bind='visible: error') Sorry, we were unable to parse that article.
 
-      .PagePending(data-bind='visible: isPending') Pending upload
+      .PagePending.L-push(data-bind='visible: isPending')
 
-      .PageList.L-hidden(data-bind='foreach: pages, css: { "L-hidden": false }')
+      .PageList(data-bind='foreach: pages')
         a.PageList-page(data-bind='attr: { href: url }' target='_blank')
           header.PageList-title(data-bind='text: title')
           img.PageList-thumb(data-bind='attr: { src: image }')

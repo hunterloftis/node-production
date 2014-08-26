@@ -61,6 +61,12 @@
   top: 2px;
 }
 
+.PagePending {
+  width: 100%;
+  height: 10px;
+  background: url('/pending.gif');
+}
+
 .PageList-page {
   text-decoration: none;
   color: inherit;
