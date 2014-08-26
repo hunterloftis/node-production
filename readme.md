@@ -1,38 +1,32 @@
 # Node-Production
 
-A production-ready node app that can be provisioned and deployed
-for free on Heroku with a single command (`npm run create`).
-It will scale without issue and handle network interruptions gracefully.
-
-```
-git clone https://github.com/hunterloftis/node-production.git && cd node-production
-npm run create
-```
-
-## Checklist
-
-- 12-Factor
-- Exportable & testable without http server
-- Default config, overridden by the environment
-- Localized package.json dependencies and devDependencies
-- Cross-platform launcher (`npm start`)
-- Hot reloading with debug output for dev (`npm run dev`)
-- Node-core standard debug output
-- Robust redis dependency
-- Robust mongodb dependency
-- Robust error handling
-- Bcrypt + salting
-- Sane gitignore
+Running Node all the way from development to production on Heroku.
 
 ## Local dependencies
 
-This app requires a mongodb and redis connection.
-To run locally, you can provide remote connections in the environment (see config.js).
-Alternatively, you can run mongodb and redis locally, eg:
+- Redis for sessions
+- MongoDB for data
+- RabbitMQ for job queueing
+
+## Installing
 
 ```
+$ brew install redis mongodb rabbitmq
 $ brew services start mongodb
 $ brew services start redis
+$ brew services start rabbitmq
 $ npm install
-$ npm run dev
 ```
+
+## Running
+
+`npm start` then http://localhost:5000
+
+## Deploying
+
+```
+$ heroku create
+$ git push heroku master
+$ heroku open
+```
+
