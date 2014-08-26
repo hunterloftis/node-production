@@ -47,7 +47,7 @@ $ git push heroku master
 
 ## Config
 
-Environment variables are mapped to a config object in lib/config.js.
+Environment variables are mapped to a config object in [lib/config.js](https://github.com/hunterloftis/node-production/blob/master/lib/config.js).
 This provides reasonable defaults as well as a layer of generalization
 (`process.env.REDISCLOUD_URL` => `config.redis_url`).
 
