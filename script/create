@@ -4,8 +4,10 @@ IFS=$'\n\t'
 
 create() {
   heroku create
+
   heroku addons:add mongohq
   heroku addons:add rediscloud
+  heroku addons:add cloudamqp
 
   # can optionally use a specific key for the session secret here to be able to recover sessions
   heroku config:set SESSION_SECRET="`openssl rand -base64 32`"
@@ -20,7 +22,6 @@ create() {
   heroku config:unset DEBUG
 
   git push heroku master
-  heroku open
 }
 
 create

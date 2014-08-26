@@ -25,8 +25,7 @@ $ npm install
 ## Deploying
 
 ```
-$ heroku create
-$ git push heroku master
+$ script/create
 $ heroku open
 ```
 
