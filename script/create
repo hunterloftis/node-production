@@ -16,6 +16,7 @@ create() {
   heroku config:set VIEW_CACHE="true"
 
   git push heroku master
+  heroku ps:scale web=1 worker=1
 }
 
 create
