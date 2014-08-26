@@ -13,6 +13,8 @@ html(lang='en')
         input(placeholder='www.url.com' data-bind='textInput: url')
         a(data-bind='click: addPage') Add
 
+      .PagePending(data-bind='visible: isPending') Pending upload
+
       .PageList.L-hidden(data-bind='foreach: pages, css: { "L-hidden": false }')
         a(href='page.url').PageList-page
           header.PageList-title(data-bind='text: title')

@@ -10,10 +10,10 @@ instance
 
 function onSuccess() {
   console.log('successfully reset');
-  instance.shutdown();
+  process.exit();
 }
 
 function onError(err) {
-  instance.shutdown();
   throw err;
+  process.exit();
 }
