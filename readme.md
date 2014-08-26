@@ -28,8 +28,21 @@ $ npm install
 
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/hunterloftis/node-production)
 
-If you would rather clone locally and then deploy from the CLI,
-you can do so via `script/create`
+If you would rather clone locally and then deploy from the CLI:
+
+```
+$ script/create
+
+(app deploys)
+
+$ heroku open
+
+(check it out)
+(hack...hack...hack)
+
+$ git commit -am 'awesome changes'
+$ git push heroku master
+```
 
 ## Config
 
