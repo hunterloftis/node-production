@@ -63,7 +63,9 @@ This enables horizontally scaling for both web traffic and long-running requests
 
 #### Locally
 
-`npm start` runs [node-foreman](http://strongloop.github.io/node-foreman/), which will start a single web process and a single worker process.
+`npm start` runs [node-foreman](http://strongloop.github.io/node-foreman/),
+which will check the [Procfile](https://github.com/hunterloftis/node-production/blob/master/Procfile)
+and start a single web process and a single worker process.
 
 #### On Heroku
 
