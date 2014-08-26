@@ -14,7 +14,7 @@
   },
   "addons": [
     "mongohq",
-    "rediscloud",
+    "redistogo",
     "cloudamqp"
   ],
   "env": {
