@@ -28,3 +28,13 @@ $ npm install
 $ script/create
 $ heroku open
 ```
+
+## Config
+
+Environment variables are mapped to a config object in lib/config.js.
+This provides reasonable defaults as well as a layer of generalization
+(`process.env.REDISCLOUD_URL` => `config.redis_url`).
+
+## Scaling
+
+The app is separated into two tiers: web (server.js) and worker (worker.js).
