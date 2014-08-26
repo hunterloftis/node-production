@@ -11,8 +11,6 @@ create() {
 
   heroku config:set SESSION_SECRET="`openssl rand -base64 32`"
   heroku config:set NODE_ENV="production"
-  heroku config:set COOKIE_SECRET="prodSecret"
-  heroku config:set CONCURRENT="true"
   heroku config:set VIEW_CACHE="true"
 
   git push heroku master
