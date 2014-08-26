@@ -9,17 +9,11 @@ create() {
   heroku addons:add rediscloud
   heroku addons:add cloudamqp
 
-  # can optionally use a specific key for the session secret here to be able to recover sessions
   heroku config:set SESSION_SECRET="`openssl rand -base64 32`"
-
-  # to disable view caching & other env-sensitive settings: heroku config:set NODE_ENV=staging
-  heroku config:set NODE_ENV=production
-
-  # to get request/response logging: heroku config:unset QUIET
-  heroku config:set QUIET=true
-
-  # to get debug logs: heroku config:set DEBUG='Node-Production:*'
-  heroku config:unset DEBUG
+  heroku config:set NODE_ENV="production"
+  heroku config:set COOKIE_SECRET="prodSecret"
+  heroku config:set CONCURRENT="true"
+  heroku config:set VIEW_CACHE="true"
 
   git push heroku master
 }

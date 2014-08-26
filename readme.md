@@ -28,4 +28,3 @@ $ npm install
 $ script/create
 $ heroku open
 ```
-
