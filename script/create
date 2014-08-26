@@ -12,9 +12,10 @@ create() {
   heroku config:set SESSION_SECRET="`openssl rand -base64 32`"
   heroku config:set NODE_ENV="production"
   heroku config:set VIEW_CACHE="true"
+  heroku config:set THRIFTY="true"
 
   git push heroku master
-  heroku ps:scale web=1 worker=1
+  heroku ps
 }
 
 create
