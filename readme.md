@@ -88,15 +88,7 @@ When you're ready to test in staging or deploy to production, you can scale beyo
 ```
 heroku config:unset THRIFTY
 heroku config:set CONCURRENT=true
-heroku ps:scale web=1 worker=1
-```
-
-One of the strengths of this architecture is to allow you to scale from a single dyno
-all the way up to a fleet of dozens of web and worker processes serving hundreds of thousands of users.
-You can run a cheap 1-hour load test with something like this (just upgrade your addons first!):
-
-```
-heroku ps:scale web=16 worker=16
+heroku ps:scale web=2 worker=1
 ```
 
 ## Architecture
