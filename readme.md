@@ -72,13 +72,16 @@ and start a single web process and a single worker process.
 The default deploy configuration includes `THRIFTY=true`, which starts the app in single-dyno mode (free!).
 With `THRIFTY=true`, the web process handles both http requests and queued jobs.
 
-Of course, a production app should never run in a single instance,
-and you should avoid tying up serving your users with long-running processes.
-When you're ready to test in staging or deploy to production, you can
-scale beyond single-dyno mode:
+Similarly, the default configuration includes `CONCURRENT=false`, which means only one Cluster
+worker will be created per process. This is to keep under free levels of addon connection limits (like redis).
+
+Of course, a production app should never run in a single instance or make users wait for worker processes.
+Additionally, allowing Cluster to take advantage of all the CPUs on a dyno can improve performance.
+When you're ready to test in staging or deploy to production, you can scale beyond single-dyno mode:
 
 ```
 heroku config:unset THRIFTY
+heroku config:set CONCURRENT=true
 heroku ps:scale web=1 worker=1
 ```
 
