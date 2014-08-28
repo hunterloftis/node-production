@@ -31,12 +31,12 @@
   text-align: center;
 }
 
-.PageForm {
+.ArticleForm {
   padding: 20px;
   background: #eee;
 }
 
-.PageForm > input {
+.ArticleForm > input {
   display: inline-block;
   vertical-align: top;
   width: 80%;
@@ -47,7 +47,7 @@
   background: #fff;
 }
 
-.PageForm > a {
+.ArticleForm > a {
   display: inline-block;
   vertical-align: top;
   width: 20%;
@@ -61,17 +61,17 @@
   top: 2px;
 }
 
-.PageForm-error {
+.ArticleForm-error {
   margin: 14px 0 0 0;
 }
 
-.PagePending {
+.ArticlePending {
   width: 100%;
   height: 10px;
   background: url('/pending.gif');
 }
 
-.PageList-page {
+.ArticleList-article {
   text-decoration: none;
   color: inherit;
   display: block;
@@ -84,14 +84,14 @@
   margin-bottom: 16px;
 }
 
-.PageList-title {
+.ArticleList-title {
   font-size: 19px;
   font-family: georgia, serif;
   color: #79589F;
   line-height: 2;
 }
 
-.PageList-thumb {
+.ArticleList-thumb {
   position: absolute;
   left: 0;
   top: 0;
@@ -101,17 +101,17 @@
   border: none;
 }
 
-.PageList-topics {
+.ArticleList-topics {
   font-weight: 400;
 }
 
-.PageList-topics, .PageList-prediction {
+.ArticleList-topics, .ArticleList-prediction {
   line-height: 1;
 }
 
-.PageList-prediction {
+.ArticleList-prediction {
   font-size: 12px;
 }
-.PageList-prediction > span {
+.ArticleList-prediction > span {
   margin-right: 20px;
 }
