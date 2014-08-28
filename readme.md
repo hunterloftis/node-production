@@ -91,6 +91,14 @@ heroku config:set CONCURRENT=true
 heroku ps:scale web=1 worker=1
 ```
 
+One of the strengths of this architecture is to allow you to scale from a single dyno
+all the way up to a fleet of dozens of web and worker processes serving hundreds of thousands of users.
+You should try a cheap 1-hour test with something like:
+
+```
+heroku ps:scale web=16 worker=16
+```
+
 ## Architecture
 
 Writing maintainable Node apps is all about separating concerns into small, well-defined modules.
