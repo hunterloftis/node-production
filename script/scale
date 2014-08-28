@@ -1,0 +1,35 @@
+#!/bin/bash
+set -euo pipefail
+IFS=$'\n\t'
+
+free() {
+  heroku config:set THRIFTY=true
+  heroku config:unset CONCURRENT
+  heroku ps:scale web=1:1X worker=0
+  heroku addons:downgrade cloudamqp:lemur
+  heroku addons:downgrade redistogo:nano
+  echo '(free!)'
+}
+
+small() {
+  heroku config:unset THRIFTY
+  heroku config:set CONCURRENT=true
+  heroku ps:scale web=2:1X worker=1:2X  # $69
+  heroku addons:upgrade cloudamqp:tiger # $19
+  heroku addons:upgrade redistogo:mini  # $9
+  echo '(about $0.13/hr)'
+}
+
+medium() {
+  heroku config:unset THRIFTY
+  heroku config:set CONCURRENT=true
+  heroku ps:scale web=3:2X worker=2:2X  # $138
+  heroku addons:upgrade cloudamqp:bunny # $100
+  heroku addons:upgrade redistogo:mini  # $9
+  echo '(about $0.34/hr)'
+}
+
+if [ "$1" = "free" ]; then; free()
+if [ "$1" = "small" ]; then; small()
+if [ "$1" = "medium" ]; then; medium()
+
