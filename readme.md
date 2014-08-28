@@ -98,19 +98,19 @@ This barebones app has three distinct components with their own responsibilities
 
 #### App
 
-The business logic is all in lib/app.
+The business logic is all in [lib/app](https://github.com/hunterloftis/node-production/tree/master/lib/app).
 This module orchestrates and provides a facade for the underlying
 MongoDB database and the RabbitMQ job queue.
 
 #### Web
 
-The user-facing portion of the project lies in lib/web.
+The user-facing portion of the project lies in [lib/web](https://github.com/hunterloftis/node-production/tree/master/lib/web).
 This module is responsible for providing an http interface and routing requests.
 It *shows* things and relies on an App instance to *do* things.
 
 #### Worker
 
-The background processes run through lib/worker.
+The background processes run through [lib/worker](https://github.com/hunterloftis/node-production/blob/master/lib/worker.js).
 This module is tiny - it just instantiates an App instance to process the job queue.
 
 
