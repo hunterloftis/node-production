@@ -9,6 +9,7 @@
   "author": "Hunter Loftis <hunter@heroku.com>",
   "license": "ISC",
   "dependencies": {
+    "blitzkrieg": "^1.0.0",
     "body-parser": "^1.5.0",
     "connect-redis": "^2.0.0",
     "connect-timeout": "^1.2.2",
