@@ -61,7 +61,7 @@ The app is separated into two tiers:
 - the web tier ([server.js](https://github.com/hunterloftis/node-production/blob/master/lib/server.js))
 - the worker tier ([worker.js](https://github.com/hunterloftis/node-production/blob/master/lib/worker.js))
 
-This enables horizontally scaling both web traffic and long-running requests.
+This enables horizontally scaling both web traffic and long-running jobs.
 
 #### Locally
 
