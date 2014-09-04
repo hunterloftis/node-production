@@ -115,3 +115,13 @@
 .ArticleList-prediction > span {
   margin-right: 20px;
 }
+
+.ArticleList-prediction .isNegative {
+  color: #f00;
+  font-weight: 400;
+}
+
+.ArticleList-prediction .isPositive {
+  color: #0b0;
+  font-weight: 400;
+}

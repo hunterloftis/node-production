@@ -24,7 +24,7 @@ html(lang='en')
           p.ArticleList-prediction
             span(data-bind='text: minutes + "-minute read"')
             span(data-bind='text: style')
-            span(data-bind='text: "generally " + sentiment')
+            span(data-bind='text: "generally " + sentiment, css: { isNegative: isNegative, isPositive: isPositive }')
 
     script(src='//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js')
     script(src='//cdnjs.cloudflare.com/ajax/libs/knockout/3.2.0/knockout-min.js')
