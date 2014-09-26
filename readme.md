@@ -71,7 +71,7 @@ and start a single web process and a single worker process.
 
 To test that your app behaves correctly when clustered in multiple processes,
 you can [specify process scales](https://github.com/strongloop/node-foreman#advanced-usage) to node-forman
-and [set `CONCURRENT=true`](https://github.com/strongloop/node-foreman#environmental-variables) in a local .env file.
+and [set `CONCURRENCY=4`](https://github.com/strongloop/node-foreman#environmental-variables) in a local .env file.
 
 #### On Heroku
 
