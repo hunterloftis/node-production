@@ -87,8 +87,8 @@ When you're ready to test in staging or deploy to production, you can scale beyo
 
 ```
 heroku config:unset THRIFTY
-heroku config:set CONCURRENT=true
-heroku ps:scale web=2 worker=1
+heroku config:set CONCURRENCY=3
+heroku ps:scale web=2X:2 worker=2X:1
 ```
 
 ## Architecture
@@ -112,5 +112,3 @@ It *shows* things and relies on an App instance to *do* things.
 
 The background processes run through [lib/worker](https://github.com/hunterloftis/node-production/blob/master/lib/worker.js).
 This module is tiny - it just instantiates an App instance to process the job queue.
-
-
